@@ -1,6 +1,6 @@
-<style lang="stylus" scoped></style>
+<style lang="stylus"></style>
 <template lang="pug">
-.template
+.Button
 
 </template>
 

@@ -1,0 +1,67 @@
+// If you have to use other language but English,
+// you need setting document text format to utf-8.
+// http://blog.shg25.com/?p=97
+@charset 'utf-8'
+@import url('//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i')
+@import url('//fonts.googleapis.com/earlyaccess/notosanstc.css')
+@import url('//fonts.googleapis.com/css?family=Source+Sans+Pro')
+@import '_base.styl'
+@import '_reboot.styl'
+@import '_fonts.styl'
+@import './project/*'
+
+:root
+  --primary-color #1E5BC6
+  --button-hover #4888f2
+  --button-focus #002b78
+  --error-color #ff7384
+  --success-color #67c23a
+
+div[class$=wrapper]
+  width 100%
+  height 100vh
+
+div[class$=container]
+  height 100%
+  width auto
+  max-width 1280px
+  min-height: 800px
+  margin 0 auto
+  overflow-x hidden
+
+//
+// transition default
+//
+@keyframes fold-in
+  0%
+    transform translate3d(100%, 0, 0)
+
+  100%
+    transform translate3d(0, 0, 0)
+
+@keyframes fold-out
+  0%
+    transform translate3d(0, 0, 0)
+
+  100%
+    transform translate3d(100%, 0, 0)
+
+.page-enter-active,
+.page-leave-active
+  transition all 0.5s
+
+.page-enter,
+.page-leave-to
+  opacity 0
+
+.page-enter-to,
+.page-leave
+  opacity 1
+
+.sidePopup-enter-active
+  animation-name fold-in
+  animation-duration 0.5s
+
+.sidePopup-leave-active
+  animation-name fold-out
+  animation-duration 0.5s
