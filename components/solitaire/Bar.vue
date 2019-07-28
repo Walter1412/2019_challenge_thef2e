@@ -24,7 +24,7 @@
   .bar__tool
     img.bar__tool-more(src="~assets/images/solitaire/more.svg")
     span.bar__tool-time Time 00:00
-    img.bar__tool-return(src="~assets/images/solitaire/return.svg")
+    img.bar__tool-return(src="~assets/images/solitaire/return.svg" @click="$emit('return')")
   .bar__score
     img.bar__score-logo(src="~assets/images/solitaire/bone.svg")
     span.bar__score-number Score:00

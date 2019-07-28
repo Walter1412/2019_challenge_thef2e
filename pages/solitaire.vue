@@ -67,7 +67,7 @@
 .solitaire-wrapper
   .solitaire-container
     .solitaire
-      Bar
+      Bar(@return="shuffle")
       .helper-list
         .helper-list-zone
           .helper-item
@@ -147,6 +147,9 @@ export default {
       this.shuffle()
     },
     shuffle() {
+      this.registerList = [-1, -1, -1, -1]
+      this.answerList = [[], [], [], []]
+      this.chooseCard = -1
       const sArray = []
       for (let index = 0; index < 52; index++) {
         sArray.push(index)
