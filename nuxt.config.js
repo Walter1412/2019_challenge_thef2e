@@ -1,3 +1,8 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? { router: { base: '/<repository-name>/' } }
+    : {}
+
 export default {
   mode: 'spa',
   /*
@@ -49,11 +54,13 @@ export default {
   modules: ['@nuxtjs/eslint-module'],
   /*
    ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  }
+  //  */
+  // build: {
+  //   /*
+  //    ** You can extend webpack config here
+  //    */
+  //   extend(config, ctx) {},
+
+  // }
+  ...routerBase
 }
